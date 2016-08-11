@@ -1,9 +1,9 @@
 # BOOST JS 🚀 #
 
 ## Notable Npm Modules ##
-### Core: ###
+### Core: ##
   * socket.io: socket connections between server and client with multiplexing, fallbacks, auto-reconnect, and other useful features
-### Dev: ###
+### Dev: ##
   * webpack: Bundles markup, clientside scripts, and styles into all.min.js
   * babel: allows writing modern js with recompilation to work on older browsers
   * babel-preset-es2015/stage-3: allows using cutting edge JS features
