@@ -1,5 +1,5 @@
-// import io from './libs/socketio.1.4.5.min.js';
-import hash from 'object-hash';
+const io = require('socket.io-client');
+const hash = require('object-hash');
 
 class Boost {
     subscribe(path) {
@@ -78,4 +78,4 @@ class Boost {
     }
 }
 
-export default new Boost();
+module.exports = new Boost();

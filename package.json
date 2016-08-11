@@ -1,6 +1,6 @@
 {
   "name": "boostjs",
-  "version": "0.0.2",
+  "version": "0.0.8",
   "description": "Boostjs front end framework",
   "main": "boost.js",
   "repository": {
@@ -14,6 +14,7 @@
   },
   "homepage": "https://github.com/briancw/boostjs#readme",
   "dependencies": {
-    "object-hash": "^1.1.4"
+    "object-hash": "^1.1.4",
+    "socket.io-client": "^1.4"
   }
 }
