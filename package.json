@@ -1,8 +1,8 @@
 {
   "name": "boostjs",
-  "version": "0.0.8",
+  "version": "0.0.21",
   "description": "Boostjs front end framework",
-  "main": "boost.js",
+  "main": "./boost",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/briancw/boostjs.git"
@@ -14,9 +14,9 @@
   },
   "homepage": "https://github.com/briancw/boostjs#readme",
   "dependencies": {
+    "jsondiffpatch": "^0.1",
     "object-hash": "^1.1.4",
-    "socket.io-client": "^1.4",
-    "jsondiffpatch": "^0.1"
+    "socket.io-client": "^1.4"
   },
   "devDependencies": {
     "babel-core": "^6.14.0",
