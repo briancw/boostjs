@@ -1,19 +1,20 @@
-var crypto = require('crypto');
-var differ = require('jsondiffpatch');
+const crypto = require('crypto');
+const differ = require('jsondiffpatch');
+const io = require('socket.io-client');
 
 class Stream
 {
-  constructor(name, parent)
+  constructor(name)
   {
     this.name = name;
-    this.store = parent;
     this.listeners = [];
+    this.socket = io.connect(name, {transports: ['websocket']});
   }
 
   start(ret)
   {
-     this.store.socket.on('connect', () => {
-      this.store.socket.on('hash', hash => {
+     this.socket.on('connect', () => {
+      this.socket.on('hash', hash => {
         console.log('initial hash', hash);
 
 
@@ -63,7 +64,8 @@ class Stream
 
   retrieve(ret)
   {
-    this.store.socket.emit('full', null, data => {
+    this.socket.emit('full', null, data => {
+      console.log(data);
       let hash = crypto.createHash('md5').update(data).digest("hex");
       console.log('new');
 
@@ -79,7 +81,7 @@ class Stream
 
   patch(ret)
   {
-    this.store.socket.emit('patch', this.hash, data => {
+    this.socket.emit('patch', this.hash, data => {
       console.log(data);
 
       if (Array.isArray(data)) {
@@ -106,11 +108,11 @@ class Stream
     let key = this.name + '.' + action;
     console.log('calling ' + action);
     props = props ? props : [];
-    this.store.socket.emit(key, props, data => {
+    this.socket.emit(key, props, data => {
       cb(data);
     });
 
-    // this.store.socket.on(key, data => {
+    // this.socket.on(key, data => {
     //   cb(data);
     // });
   }
