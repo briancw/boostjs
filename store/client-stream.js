@@ -43,7 +43,7 @@ class Stream
 
   send(data)
   {
-    return JSON.parse(JSON.parse(data).data);
+    return JSON.parse(JSON.parse(JSON.parse(data).data));
   }
 
   // send(data)
