@@ -16,7 +16,9 @@
   "dependencies": {
     "jsondiffpatch": "^0.1",
     "object-hash": "^1.1.4",
-    "socket.io-client": "^1.4"
+    "socket.io-client": "^1.4",
+    "vue": "^2.0.0-rc.5",
+    "vue-router": "^2.0.0-rc.5"
   },
   "devDependencies": {
     "babel-core": "^6.14.0",
